@@ -30,6 +30,12 @@
             color: #5e5e5e;
         }
 
+        /* Auto Size Images */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
         /* Grid layout: menu column & main content */
         .grid-container {
             display: grid;
@@ -87,6 +93,16 @@
         .content {
             grid-area: content;
             padding: 10px;
+        }
+
+        /* Responsive Res */
+        @media only screen and (max-width: 600px) {
+            .grid container {
+                grid-template-areas:
+                    'menu'
+                    'content';
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
