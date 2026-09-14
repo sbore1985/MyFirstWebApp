@@ -3,34 +3,143 @@
 
 <head>
     <title>Discussion</title>
-</head>
-<style>
-    body{background-color: black;}
-    h1{color: cornflowerblue;}
-    p{color: gold;}
-    a{color:gold;}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-</style>
+        body {
+            background-color: transparent;
+            margin: 0;
+        }
+
+        .header {
+            background-color: rgb(79, 51, 240);
+            color: white;
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
+
+        p {
+            color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        a {
+            color: #5e5e5e;
+        }
+
+        /* Grid layout: menu column & main content */
+        .grid-container {
+            display: grid;
+            grid-template-areas: 'menu content';
+            grid-template-columns: 200px 1fr;
+            gap: 10px;
+        }
+
+        /* Left hand colum */
+        .menu {
+            grid-area: menu;
+            background-color: rgb(79, 51, 240);
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            position: relative;
+        }
+
+        .menu li a {
+            display: block;
+            padding: 12px;
+            background-color: rgb(79, 51, 240);
+            color: white;
+            text-decoration: none;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .menu li a:hover {
+            background-color: rgb(59, 38, 191);
+        }
+
+        /* Dropdown submenu, hidden by default */
+        .menu .dropdown {
+            display: none;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu .dropdown li a {
+            background-color: rgb(79, 51, 240);
+            padding-left: 24px;
+        }
+
+        .menu li:hover .dropdown {
+            display: block;
+        }
+
+        .content {
+            grid-area: content;
+            padding: 10px;
+        }
+    </style>
+</head>
 
 <body>
-    <h1 style="color:red;text-align: center;"><i>Discussion - Enhance Your Web App</i></h1>
-    <h3>A Quick Hello</h3>
-    <p title="Quick Intro" style="background-color: brown;text-align: center;">
-        I'm Shaun and this is my 5th module; looking forward to learning new skills along side you all.
-        <br>
-    </p>
+    <div class="header">
+        <h1><i>SENSORY SHOP</i></h1>
+    </div>
 
-    <center><img src="hello.jpg"  width="500" height="400" alt="Hello Image"></center>
-    <br><br>
-    <hr>
+    <div class="grid-container">
 
-    <p style="text-align: center;">
-        I'm sure I'll be using the below pages for referencing:<br><br>
-        <a href="https://www.w3schools.com">Visit W3Schools<br></a>
-        <a href="https://www.youtube.com/watch?v=it1rTvBcfRg&list=PLP9IO4UYNF0VdAajP_5pYG-jG2JRrG72s&index=1">W3Schools
-            on YouTube<br><br></a>
-        Hope you all enjoy the course<br>Shaun
-    </p>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Home </a></li>
+                <li>
+                    <a href="#">Shop ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="fidgets.html">Fidgets</a></li>
+                        <li><a href="lighting.html">Lighting</a></li>
+                        <li><a href="softplay.html">Soft Play</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <p title="Quick Intro" style="text-align: center;">
+                Welcome to the number one stop for all your sensory needs. From fidgets to lighting, we stock it all. If
+                you require anything specific which you can't find advertsied, please use our contacts page to discuss.
+                <br>
+            </p>
+
+            <center><img src="sensory front page.png" width="900" height="400" alt="Sensory Items,Fidgets & Soft Play">
+            </center>
+            <br><br>
+            <hr>
+
+            <p style="text-align: center;">
+                Please enjoy looking through out current stock. While we appreciate specialist items can be expesnive,
+                our aim is to be open and honest, bringing you the best possible prices available to ourselves.
+                <br><br>
+                Useful advise and information relating to Sensory processing:
+                <br>
+                <a href="https://www.autism.org.uk/advice-and-guidance/about-autism/sensory-processing">National
+                    Autistic Society - Sensory Processing<br></a>
+                <a href="https://www.sensoryhelpnow.org/">Sensory Help Now - Free Self Paced Courses &
+                    Resources<br><br></a>
+                <br>Owner: Shaun
+            </p>
+        </div>
+    </div>
 
 </body>
 
