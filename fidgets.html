@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Sensory Shop</title>
+    <title>Sensory Shop Contact</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         * {
@@ -93,9 +93,6 @@
         .content {
             grid-area: content;
             padding: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         /* Responsive Res */
@@ -107,20 +104,6 @@
                 grid-template-columns: 1fr;
             }
         }
-
-        /* Weather Widget Styling */ 
-        .weather-widget {
-            text-align: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f0f5;
-            border: 1px solid rgb(79, 51, 240);
-            border-radius: 6px;
-            padding: 10px;
-            margin: 10px; auto;
-            max-width: 400px;
-            display: block;
-        }
-
     </style>
 </head>
 
@@ -147,15 +130,20 @@
             </ul>
         </div>
 
-        <div class="content">
-            <p title="Quick Intro" style="text-align: center;">
-                Welcome to the number one stop for all your sensory needs. From fidgets to lighting, we stock it all. If
-                you require anything specific which you can't find advertsied, please use our contacts page to discuss.
+        <div class="figets">
+            <p title="Fidgets" style="text-align: center;">
+                Please enjoy browsing our current stock and don't forget, if you can't find what you're looking for,
+                contact us <!--Added Contact Us Button-->
+                <button type="button" onclick="myFunction()" 
+                style="
+                padding: 4px 10px;
+                font-size: 14px;
+                cursor: pointer;
+                ">here</button>
                 <br>
             </p>
-
-            <center><img src="sensory front page.png" width="900" height="400" alt="Sensory Items,Fidgets & Soft Play">
-            </center>
+            <img src="handheld_fidget" width="200" height="200" alt="">
+            
             <br><br>
             <hr>
 
@@ -169,45 +157,14 @@
                     Autistic Society - Sensory Processing<br></a>
                 <a href="https://www.sensoryhelpnow.org/">Sensory Help Now - Free Self Paced Courses &
                     Resources<br><br></a>
-
                 <br>Owner: Shaun
             </p>
-
-            
-<!--Weather API-->
-
-<p><center>Current Weather at Sensory Shop HQ:</center></p>
-<centre><div class="weather-widget">
-    <p id="weather" style="margin: 0;">Loading Sheffield Weather...</p>
-</div>
-<script>
-    const weatherEl = document.getElementById("weather");
-    const WEATHER_API_KEY = "65fac0e5bb21320ed0507323d39e1644"; // regenerate the one you just posted
-    const sheffieldCityId = 524901;
-
-    function getWeather() {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?id=${sheffieldCityId}&units=metric&appid=${WEATHER_API_KEY}`)
-            .then(response => {
-                if (!response.ok) throw new Error("Weather fetch failed: " + response.status);
-                return response.json();
-            })
-            .then(showWeather)
-            .catch(err => {
-                weatherEl.innerHTML = "Couldn't load weather: " + err;
-            });
-    }
-
-    function showWeather(data) {
-        const temp = Math.round(data.main.temp);
-        const description = data.weather[0].description;
-        weatherEl.innerHTML = `Sheffield: ${temp}&deg;C, ${description}`;
-    }
-
-    getWeather();
-</script>
-        </div></div>
+        </div>
     </div>
 
+    <script>
+        function myFunction() { window.location.href = "contact.html"; }
+    </script>
 </body>
 
 </html>
